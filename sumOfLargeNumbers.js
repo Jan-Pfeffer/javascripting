@@ -1,19 +1,17 @@
-let unsortedNumbers = [1, 50, 60, 5, 60, 25]
-let arrayOfNumbers = unsortedNumbers.sort(function(a, b) { return a - b });
+const sumLargestNumbers = function(unsortedNumbers, iterations) {
 
+    let arrayOfNumbers = unsortedNumbers.sort(function(a, b) { return a - b });
+    let arrayOfLargestNumbers = []
 
-let arrayOfLargestNumbers = []
-let counter = 0
-
-
-while (counter !== 2) {
-    let largestNumber = 0
-    largestNumber = Math.max(...arrayOfNumbers);
-    arrayOfNumbers.pop();
-    arrayOfLargestNumbers.push(largestNumber);
-    counter++;
+    let counter = 0
+    while (counter !== iterations) {
+        let largestNumber = 0
+        largestNumber = Math.max(...arrayOfNumbers);
+        arrayOfNumbers.pop();
+        arrayOfLargestNumbers.push(largestNumber);
+        counter++;
+    }
+    return (arrayOfLargestNumbers.reduce((a, b) => a + b));
 }
-let stLargestNumber = arrayOfLargestNumbers[0]
-let ndLargestNumber = arrayOfLargestNumbers[1]
 
-console.log(stLargestNumber + ndLargestNumber);
+console.log(sumLargestNumbers([100, 100, 100, 50, 100, 2], 5));
