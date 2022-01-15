@@ -7,6 +7,9 @@ const sumLargestNumbers = function(unsortedNumbers, iterations) {
     while (counter !== iterations) {
         let largestNumber = 0
         largestNumber = Math.max(...arrayOfNumbers);
+        if (isNaN(largestNumber)) {
+            throw new Error('Invalid Array! Check your array and ensure it only contains numbers');
+        } else {}
         arrayOfNumbers.pop();
         arrayOfLargestNumbers.push(largestNumber);
         counter++;
@@ -14,4 +17,4 @@ const sumLargestNumbers = function(unsortedNumbers, iterations) {
     return (arrayOfLargestNumbers.reduce((a, b) => a + b));
 }
 
-console.log(sumLargestNumbers([100, 100, 100, 50, 100, 2], 2));
+console.log(sumLargestNumbers([100, 100, 3, 50, 100, 2], 2));
