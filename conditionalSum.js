@@ -1,23 +1,19 @@
 const conditionalSum = function(numArray, condition) {
     let x = 0
     if (condition == "odd") {
-        let index = 0
-        for (let num in numArray) {
-            let oddCheck = numArray[index] % 2;
+        for (let num of numArray) {
+            let oddCheck = num % 2;
             if (oddCheck == 1) {
-                x = x + numArray[index]
+                x = x + num
             }
-            index++;
         }
         return x;
     } else if (condition == "even") {
-        let index = 0
-        for (let num in numArray) {
-            let oddCheck = numArray[index] % 2;
+        for (let num of numArray) {
+            let oddCheck = num % 2;
             if (oddCheck == 0) {
-                x = x + numArray[index]
+                x = x + num
             }
-            index++;
         }
         return x;
     } else {
@@ -25,4 +21,4 @@ const conditionalSum = function(numArray, condition) {
     }
 }
 
-console.log(conditionalSum([5, 5, 5, 5, 5, 4, 4, 4, 4], "even"));
+console.log(conditionalSum([5, 5, 5, 4, 5, 6, 7, 8, 4, 4, 4, 4], "odd"));
