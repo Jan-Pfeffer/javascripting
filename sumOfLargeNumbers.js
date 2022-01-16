@@ -9,7 +9,7 @@ const sumLargestNumbers = function(unsortedNumbers, iterations) {
         largestNumber = Math.max(...arrayOfNumbers);
         if (isNaN(largestNumber)) {
             throw new Error('Invalid Array! Check your array and ensure it only contains numbers');
-        } else {}
+        }
         arrayOfNumbers.pop();
         arrayOfLargestNumbers.push(largestNumber);
         counter++;
